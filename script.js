@@ -8,15 +8,15 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var reveals = document.querySelectorAll(".reveal");
-  var linksGrid = document.querySelector(".links-grid");
+  var staggers = document.querySelectorAll(".stagger-in");
 
   function markIn() {
     reveals.forEach(function (el) {
       el.classList.add("is-in");
     });
-    if (linksGrid) {
-      linksGrid.classList.add("is-in");
-    }
+    staggers.forEach(function (el) {
+      el.classList.add("is-in");
+    });
   }
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -29,9 +29,9 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
-        if (entry.target.id === "links" && linksGrid) {
-          linksGrid.classList.add("is-in");
-        }
+        entry.target.querySelectorAll(".stagger-in").forEach(function (grid) {
+          grid.classList.add("is-in");
+        });
         observer.unobserve(entry.target);
       });
     },

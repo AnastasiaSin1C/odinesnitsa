@@ -114,8 +114,26 @@ img {
   padding: 2.5rem 0 3rem;
 }
 
-.hero-copy {
-  max-width: 38rem;
+.hero-copy .section-label {
+  margin-bottom: 0.65rem;
+}
+
+.hero-copy .section-text {
+  max-width: 36rem;
+}
+
+.hero-copy .btn {
+  margin: 0.35rem 0 0;
+}
+
+.channel-logo {
+  display: block;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f4d000;
+  flex-shrink: 0;
 }
 
 .hero-photo {
@@ -244,6 +262,10 @@ img {
   align-items: start;
 }
 
+.about-copy .btn {
+  margin-top: 0.35rem;
+}
+
 .about-points {
   list-style: none;
   margin: 0.35rem 0 0;
@@ -299,138 +321,247 @@ img {
   color: var(--ink);
 }
 
-.links-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem 1.5rem;
-  margin-top: 0.35rem;
+.school-card,
+.course-card,
+.mentor-card,
+.social-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.3rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
-.link-group-title {
-  margin: 0 0 0.85rem;
-  font-family: var(--font-sans);
+.school-card {
+  margin: 0.35rem 0 1.25rem;
+}
+
+.school-kicker {
+  margin: 0 0 0.45rem;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--coral-deep);
 }
 
-.link-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.course-grid,
+.social-grid,
+.read-grid,
+.watch-grid {
   display: grid;
-  gap: 0.65rem;
+  gap: 1rem;
 }
 
-.js .links-grid:not(.is-in) .link-list li {
-  opacity: 0;
-  transform: translateY(10px);
+.course-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1rem;
 }
 
-.links-grid.is-in .link-list li {
-  animation: rise 0.55s ease both;
+.course-card,
+.mentor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
-.links-grid.is-in .link-group:nth-child(1) .link-list li:nth-child(1) { animation-delay: 0.02s; }
-.links-grid.is-in .link-group:nth-child(1) .link-list li:nth-child(2) { animation-delay: 0.08s; }
-.links-grid.is-in .link-group:nth-child(1) .link-list li:nth-child(3) { animation-delay: 0.14s; }
-.links-grid.is-in .link-group:nth-child(1) .link-list li:nth-child(4) { animation-delay: 0.2s; }
-.links-grid.is-in .link-group:nth-child(2) .link-list li:nth-child(1) { animation-delay: 0.05s; }
-.links-grid.is-in .link-group:nth-child(2) .link-list li:nth-child(2) { animation-delay: 0.11s; }
-.links-grid.is-in .link-group:nth-child(2) .link-list li:nth-child(3) { animation-delay: 0.17s; }
-.links-grid.is-in .link-group:nth-child(2) .link-list li:nth-child(4) { animation-delay: 0.23s; }
+.mentor-card .school-kicker {
+  margin-bottom: 0;
+}
 
-.link-list a {
+.course-card h3,
+.mentor-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.course-card p,
+.mentor-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.course-card .btn,
+.mentor-card .btn {
+  margin-top: auto;
+}
+
+.social-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.35rem;
+}
+
+.read-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
+  margin-top: 0.35rem;
+  align-items: stretch;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.social-card-main {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.85rem;
-  align-items: start;
-  padding: 1rem 1.05rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  backdrop-filter: blur(8px);
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  align-items: center;
+  gap: 1rem 1.2rem;
+  padding: 1.2rem 1.35rem;
+  border-color: rgba(219, 152, 9, 0.4);
+  background: linear-gradient(180deg, #fff 0%, var(--yellow-soft) 160%);
 }
 
-.link-list a:hover {
+.social-card-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.social-card-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem 1rem;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.brand-icon-lg {
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 12px;
+}
+
+.brand-icon-lg svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.brand-telegram {
+  background: #e7f6fd;
+  color: #229ed9;
+}
+
+.brand-vk {
+  background: #e8f1ff;
+  color: #0077ff;
+}
+
+.brand-youtube {
+  background: #fde8e8;
+  color: #ff0000;
+}
+
+.brand-rutube {
+  background: #ececec;
+  color: #111;
+}
+
+.brand-ymusic {
+  background: #fff3b0;
+  color: #1a1a1a;
+}
+
+.watch-grid {
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  margin: 0.35rem 0 2rem;
+}
+
+.interviews-head {
+  margin-top: 0.5rem;
+}
+
+.interviews-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+
+.social-card-main .social-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+}
+
+.social-card-main .social-desc {
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+}
+
+.social-card-main .btn {
+  margin-top: 0.2rem;
+  pointer-events: none;
+}
+
+.social-card:hover,
+.course-card:hover,
+.mentor-card:hover {
   border-color: rgba(219, 152, 9, 0.55);
   background: #fff;
   transform: translateY(-2px);
 }
 
-.link-icon {
-  display: grid;
-  place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  border-radius: 10px;
-  background: var(--yellow-soft);
-  color: var(--ink);
-  flex-shrink: 0;
+.social-card-main:hover {
+  background: linear-gradient(180deg, #fff 0%, var(--yellow-soft) 160%);
 }
 
-.link-icon svg {
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
-.link-list a:hover .link-icon {
-  background: rgba(255, 133, 98, 0.22);
+.social-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--coral-deep);
 }
 
-.link-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  min-width: 0;
-}
-
-.link-title {
+.social-title {
   font-weight: 650;
-  font-size: 1rem;
+  font-size: 1.08rem;
 }
 
-.link-sub {
-  font-size: 0.88rem;
+.social-desc {
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
-.social-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 1.35rem;
+.js .stagger-in:not(.is-in) > * {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-.social-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.65);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--ink);
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+.stagger-in.is-in > * {
+  animation: rise 0.55s ease both;
 }
 
-.social-icon {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-}
-
-.social-chip:hover {
-  border-color: rgba(249, 93, 81, 0.45);
-  background: #fff;
-  transform: translateY(-1px);
-}
+.stagger-in.is-in > *:nth-child(1) { animation-delay: 0.02s; }
+.stagger-in.is-in > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-in.is-in > *:nth-child(3) { animation-delay: 0.18s; }
 
 .video-grid {
   display: grid;
@@ -512,6 +643,49 @@ img {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.contacts-panel {
+  margin-top: 0.5rem;
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 16px 36px rgba(16, 16, 16, 0.06);
+}
+
+.btn-telegram {
+  display: inline-flex;
+  min-width: min(100%, 18rem);
+  padding: 1rem 1.7rem;
+  font-size: 1.08rem;
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255, 133, 98, 0.35);
+}
+
+.btn-telegram:hover {
+  background: var(--coral-deep);
+  box-shadow: 0 12px 28px rgba(249, 93, 81, 0.4);
+}
+
+.contacts-alt {
+  margin: 1.15rem 0 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.contacts-alt a {
+  font-weight: 650;
+  color: var(--ink);
+  border-bottom: 1.5px solid rgba(219, 152, 9, 0.55);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contacts-alt a:hover {
+  color: var(--coral-deep);
+  border-color: var(--coral);
 }
 
 .site-footer {
@@ -617,14 +791,21 @@ img {
     width: min(100%, 16rem);
   }
 
+  .channel-logo {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
 
-  .links-grid {
+  .course-grid,
+  .social-grid,
+  .read-grid,
+  .watch-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 }
 
@@ -650,14 +831,15 @@ img {
 
   .reveal,
   .hero-photo,
-  .link-list li,
   .video-thumb img,
   .play,
   .btn,
-  .link-list a,
-  .social-chip,
+  .btn-telegram,
+  .course-card,
+  .social-card,
+  .mentor-card,
   .nav a::after,
-  .js .links-grid:not(.is-in) .link-list li {
+  .js .stagger-in:not(.is-in) > * {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
