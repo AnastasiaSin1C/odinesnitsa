@@ -347,7 +347,6 @@ img {
 
 .course-grid,
 .social-grid,
-.read-grid,
 .watch-grid {
   display: grid;
   gap: 1rem;
@@ -396,10 +395,46 @@ img {
   margin-top: 0.35rem;
 }
 
-.read-grid {
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
+.read-main {
   margin-top: 0.35rem;
-  align-items: stretch;
+}
+
+.also-here {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 1rem;
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.also-here a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.also-here a:hover {
+  color: var(--coral-deep);
+}
+
+.also-here .brand-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 6px;
+}
+
+.also-here .brand-icon svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.watch-links {
+  margin-top: 0.35rem;
+  margin-bottom: 1.75rem;
 }
 
 .social-card {
@@ -483,8 +518,13 @@ img {
   color: #1a1a1a;
 }
 
-.brand-textpost {
-  background: var(--yellow-soft);
+.brand-dzen {
+  background: #111;
+  color: #fff;
+}
+
+.brand-setka {
+  background: #efeae3;
   color: var(--ink);
 }
 
@@ -495,6 +535,11 @@ img {
 
 .interviews-head {
   margin-top: 0.5rem;
+}
+
+.interview-read-head {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .interviews-title {
@@ -575,7 +620,34 @@ img {
 }
 
 .interview-read-grid {
-  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 13.5rem));
+  justify-content: start;
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.interview-read-grid .video-thumb {
+  aspect-ratio: 4 / 3;
+}
+
+.interview-read-grid .video-card {
+  gap: 0.45rem;
+}
+
+.interview-read-grid .video-card h3 {
+  font-size: 0.92rem;
+}
+
+.interview-read-grid .article-note {
+  margin-top: -0.1rem;
+  font-size: 0.8rem;
+}
+
+.article-note {
+  margin: -0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .video-card {
@@ -812,7 +884,6 @@ img {
 
   .course-grid,
   .social-grid,
-  .read-grid,
   .watch-grid {
     grid-template-columns: 1fr;
   }
@@ -826,6 +897,15 @@ img {
 
   .video-grid {
     grid-template-columns: 1fr;
+  }
+
+  .interview-read-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .interview-read-grid .video-card h3 {
+    font-size: 0.78rem;
   }
 }
 
