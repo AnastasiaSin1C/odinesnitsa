@@ -399,42 +399,51 @@ img {
   margin-top: 0.35rem;
 }
 
-.also-here {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.45rem 1rem;
+.channel-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   margin: 0.85rem 0 0;
-  color: var(--muted);
-  font-size: 0.98rem;
 }
 
-.also-here a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 650;
-  color: var(--ink);
-}
-
-.also-here a:hover {
-  color: var(--coral-deep);
-}
-
-.also-here .brand-icon {
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 6px;
-}
-
-.also-here .brand-icon svg {
-  width: 0.85rem;
-  height: 0.85rem;
-}
-
-.watch-links {
+#watch .channel-tiles {
   margin-top: 0.35rem;
   margin-bottom: 1.75rem;
+}
+
+.channel-tile {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  min-height: 6.25rem;
+  padding: 1.2rem 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.channel-tile:hover {
+  border-color: rgba(219, 152, 9, 0.55);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.channel-tile .brand-icon {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 12px;
+}
+
+.channel-tile .brand-icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.channel-tile-name {
+  font-size: 1.2rem;
+  font-weight: 650;
+  line-height: 1.25;
 }
 
 .social-card {
@@ -907,6 +916,19 @@ img {
   .interview-read-grid .video-card h3 {
     font-size: 0.78rem;
   }
+
+  .channel-tile {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 7.25rem;
+    padding: 1.05rem 0.7rem;
+    text-align: center;
+  }
+
+  .channel-tile-name {
+    font-size: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -927,6 +949,7 @@ img {
   .course-card,
   .social-card,
   .mentor-card,
+  .channel-tile,
   .nav a::after,
   .js .stagger-in:not(.is-in) > * {
     animation: none !important;
