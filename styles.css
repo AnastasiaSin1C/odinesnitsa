@@ -347,6 +347,7 @@ img {
 
 .course-grid,
 .social-grid,
+.read-grid,
 .watch-grid {
   display: grid;
   gap: 1rem;
@@ -395,55 +396,10 @@ img {
   margin-top: 0.35rem;
 }
 
-.read-main {
+.read-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
   margin-top: 0.35rem;
-}
-
-.channel-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0.85rem 0 0;
-}
-
-#watch .channel-tiles {
-  margin-top: 0.35rem;
-  margin-bottom: 1.75rem;
-}
-
-.channel-tile {
-  display: flex;
-  align-items: center;
-  gap: 0.95rem;
-  min-height: 6.25rem;
-  padding: 1.2rem 1.3rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
-}
-
-.channel-tile:hover {
-  border-color: rgba(219, 152, 9, 0.55);
-  background: #fff;
-  transform: translateY(-2px);
-}
-
-.channel-tile .brand-icon {
-  width: 3.1rem;
-  height: 3.1rem;
-  border-radius: 12px;
-}
-
-.channel-tile .brand-icon svg {
-  width: 1.55rem;
-  height: 1.55rem;
-}
-
-.channel-tile-name {
-  font-size: 1.2rem;
-  font-weight: 650;
-  line-height: 1.25;
+  align-items: stretch;
 }
 
 .social-card {
@@ -527,13 +483,8 @@ img {
   color: #1a1a1a;
 }
 
-.brand-dzen {
-  background: #111;
-  color: #fff;
-}
-
-.brand-setka {
-  background: #efeae3;
+.brand-textpost {
+  background: var(--yellow-soft);
   color: var(--ink);
 }
 
@@ -544,11 +495,6 @@ img {
 
 .interviews-head {
   margin-top: 0.5rem;
-}
-
-.interview-read-head {
-  margin-top: 2rem;
-  margin-bottom: 1.25rem;
 }
 
 .interviews-title {
@@ -629,34 +575,7 @@ img {
 }
 
 .interview-read-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 13.5rem));
-  justify-content: start;
-  gap: 1rem;
-  margin-top: 0;
-}
-
-.interview-read-grid .video-thumb {
-  aspect-ratio: 4 / 3;
-}
-
-.interview-read-grid .video-card {
-  gap: 0.45rem;
-}
-
-.interview-read-grid .video-card h3 {
-  font-size: 0.92rem;
-}
-
-.interview-read-grid .article-note {
-  margin-top: -0.1rem;
-  font-size: 0.8rem;
-}
-
-.article-note {
-  margin: -0.35rem 0 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+  margin-top: 1.25rem;
 }
 
 .video-card {
@@ -893,6 +812,7 @@ img {
 
   .course-grid,
   .social-grid,
+  .read-grid,
   .watch-grid {
     grid-template-columns: 1fr;
   }
@@ -906,28 +826,6 @@ img {
 
   .video-grid {
     grid-template-columns: 1fr;
-  }
-
-  .interview-read-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.65rem;
-  }
-
-  .interview-read-grid .video-card h3 {
-    font-size: 0.78rem;
-  }
-
-  .channel-tile {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.65rem;
-    min-height: 7.25rem;
-    padding: 1.05rem 0.7rem;
-    text-align: center;
-  }
-
-  .channel-tile-name {
-    font-size: 1rem;
   }
 }
 
@@ -949,7 +847,6 @@ img {
   .course-card,
   .social-card,
   .mentor-card,
-  .channel-tile,
   .nav a::after,
   .js .stagger-in:not(.is-in) > * {
     animation: none !important;
