@@ -7,6 +7,47 @@
   }
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var track = document.querySelector(".review-track");
+  if (track) {
+    var prevReview = track.parentElement.querySelector(".review-arrow[data-dir='-1']");
+    var nextReview = track.parentElement.querySelector(".review-arrow[data-dir='1']");
+
+    function reviewStep() {
+      var card = track.querySelector(".review-card");
+      if (!card) return track.clientWidth;
+      var gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function updateReviewArrows() {
+      var max = track.scrollWidth - track.clientWidth;
+      if (prevReview) prevReview.disabled = track.scrollLeft <= 2;
+      if (nextReview) nextReview.disabled = track.scrollLeft >= max - 2;
+    }
+
+    function scrollReviews(direction) {
+      track.scrollBy({
+        left: direction * reviewStep(),
+        behavior: reduceMotion ? "auto" : "smooth"
+      });
+    }
+
+    if (prevReview) {
+      prevReview.addEventListener("click", function () {
+        scrollReviews(-1);
+      });
+    }
+    if (nextReview) {
+      nextReview.addEventListener("click", function () {
+        scrollReviews(1);
+      });
+    }
+    track.addEventListener("scroll", updateReviewArrows, { passive: true });
+    window.addEventListener("resize", updateReviewArrows);
+    updateReviewArrows();
+  }
+
   var reveals = document.querySelectorAll(".reveal");
   var staggers = document.querySelectorAll(".stagger-in");
 

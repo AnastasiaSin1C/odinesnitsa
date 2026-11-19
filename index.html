@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Анастасия Синякова — одинесница.рф</title>
-  <meta name="description" content="Анастасия Синякова — программист 1С, наставник, автор канала про 1С и обучение." />
+  <title>Учу программистов 1С разбираться в типовых и доводить задачи до рабочего результата. В разработке с 2008 года.</title>
+  <meta name="description" content="Учу программистов 1С разбираться в типовых и доводить задачи до рабочего результата. В разработке с 2008 года." />
+  <meta property="og:title" content="Учу программистов 1С разбираться в типовых и доводить задачи до рабочего результата. В разработке с 2008 года." />
+  <meta property="og:description" content="Учу программистов 1С разбираться в типовых и доводить задачи до рабочего результата. В разработке с 2008 года." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,14 +19,15 @@
   <div class="page">
     <header class="site-header">
       <a class="logo" href="#about">Анастасия Синякова</a>
-      <nav class="nav" aria-label="Разделы">
-        <a href="#about">Обо мне</a>
-        <a href="#obuchayu">Обучаю</a>
-        <a href="#mentor">Менторство</a>
-        <a href="#read">Почитать</a>
-        <a href="#watch">Посмотреть и послушать</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
+      <div class="header-tools">
+        <nav class="nav" aria-label="Разделы">
+          <a href="#about">Обо мне</a>
+          <a href="#obuchayu">Обучение</a>
+          <a href="#read">Блог</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://t.me/+wNGBO4AsERg1Nzli" target="_blank" rel="noopener">Подпишись на канал</a>
+      </div>
     </header>
 
     <main>
@@ -33,16 +37,15 @@
           <p class="eyebrow">программист · наставник · автор канала про 1С и обучение</p>
           <h1>Анастасия&nbsp;Синякова</h1>
           <p class="section-text">
-            В разработке 1С с 2008&nbsp;года.
+            Учу программистов 1С разбираться в типовых и доводить задачи до рабочего результата.
           </p>
           <p class="section-text">
-            Работала на проектах в ролях программиста, тимлида, архитектора —
-            от стажёра до руководителя разработки.
+            В разработке с 2008&nbsp;года.
           </p>
           <p class="section-text">
             Веду «Заметки&nbsp;1Сницы» — канал про 1С и обучение.
           </p>
-          <a class="btn btn-primary" href="https://t.me/yellow_note" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://t.me/+wNGBO4AsERg1Nzli" target="_blank" rel="noopener">
             Подпишись на канал
           </a>
         </div>
@@ -80,21 +83,49 @@
             <a class="btn btn-primary" href="https://bgcalls.ru/tools" target="_blank" rel="noopener">Подробнее</a>
           </article>
         </div>
+        <div class="section-head school-reviews-head">
+          <h3 class="interviews-title">Отзывы учеников</h3>
+        </div>
+        <div class="review-slider">
+          <div class="review-track" tabindex="0" aria-label="Отзывы учеников">
+            <article class="review-card">
+              <img src="assets/review-anna.jpg" alt="Анна" width="114" height="112" />
+              <h3>Анна</h3>
+              <p>Чувствую, что я в самом деле могу прийти, разобраться, и выполнить задачу. Понятно, что еще не любую. И не наилучшим образом. Но это дело наживное. Я хотела практику — я ее получила.</p>
+            </article>
+            <article class="review-card">
+              <img src="assets/review-anton.jpg" alt="Антон" width="129" height="124" />
+              <h3>Антон</h3>
+              <p>При поиске работы большинство тестовых заданий так или иначе были похожи на задачи курса и справиться с ними было уже не сложно. И не приходилось краснеть на собеседованиях. По итогам курса мне удалось устроиться на работу с предварительной оценкой грейда в Джун +</p>
+            </article>
+            <article class="review-card">
+              <img src="assets/review-ekaterina.jpg" alt="Екатерина" width="123" height="122" />
+              <h3>Екатерина</h3>
+              <p>Очень понравились два коротких видеоролика, где Вы «ходили» по процедурам и функциям типовой конфигурации. Это как тёмный и страшный лес, по которому тебя провели с фонариком.</p>
+            </article>
+          </div>
+          <div class="review-nav">
+            <button type="button" class="review-arrow" data-dir="-1" aria-label="Предыдущий отзыв">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5 9 12l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="review-arrow" data-dir="1" aria-label="Следующий отзыв">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5 15 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="cta-row review-links">
+          <a class="btn btn-ghost" href="https://bgcalls.ru/feedback" target="_blank" rel="noopener">Отзывы о практикуме</a>
+        </div>
       </section>
 
       <section class="section reveal" id="mentor">
         <p class="section-label">// Менторство</p>
         <h2>Менторство</h2>
-        <div class="course-grid stagger-in">
-          <article class="mentor-card">
-            <p class="school-kicker">getMentor</p>
-            <h3>Профиль на getMentor</h3>
-            <p>
-              Менторство по 1С: старт в профессии, архитектура, оценка навыков,
-              выстраивание обучения в команде.
-            </p>
-            <a class="btn btn-ghost" href="https://getmentor.dev/mentor/anastasiia-siniakova-1230" target="_blank" rel="noopener">Открыть профиль</a>
-          </article>
+        <div class="course-grid mentor-layout">
+          <div class="mentor-actions">
+            <a class="btn btn-ghost" href="https://getmentor.dev/mentor/anastasiia-siniakova-1230" target="_blank" rel="noopener">Я на Getmentor</a>
+            <a class="btn btn-ghost" href="https://vk.ru/topic-222987067_64391719" target="_blank" rel="noopener">Отзывы о менторе в ВК</a>
+          </div>
           <article class="mentor-card">
             <p class="school-kicker">Доклад · Инфостарт</p>
             <h3>Как растить джунов</h3>
@@ -107,10 +138,27 @@
         </div>
       </section>
 
+      <section class="section reveal" id="companies">
+        <p class="section-label">// Для компаний</p>
+        <h2>Для компаний</h2>
+        <div class="course-grid">
+          <article class="course-card">
+            <h3>Если команда уже есть</h3>
+            <p>Проведу обучение ваших сотрудников.</p>
+            <a class="btn btn-primary" href="https://t.me/sAnastasia" target="_blank" rel="noopener">Написать</a>
+          </article>
+          <article class="course-card">
+            <h3>Если есть вакансия</h3>
+            <p>Присылайте — опубликую в чате выпускников.</p>
+            <a class="btn btn-primary" href="https://t.me/sAnastasia" target="_blank" rel="noopener">Прислать вакансию</a>
+          </article>
+        </div>
+      </section>
+
       <section class="section reveal" id="read">
         <p class="section-label">// Почитать</p>
         <h2>Почитать</h2>
-        <a class="social-card social-card-main read-main" href="https://t.me/yellow_note" target="_blank" rel="noopener">
+        <a class="social-card social-card-main read-main" href="https://t.me/+wNGBO4AsERg1Nzli" target="_blank" rel="noopener">
           <img class="channel-logo" src="assets/zametki.png" alt="Логотип канала «Заметки 1Сницы»" width="160" height="160" />
           <span class="social-card-copy">
             <span class="social-label">

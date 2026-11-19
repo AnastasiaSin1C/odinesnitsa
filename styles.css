@@ -70,6 +70,14 @@ img {
   letter-spacing: 0.01em;
 }
 
+.header-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem 1.25rem;
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +85,12 @@ img {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--muted);
+}
+
+.header-cta {
+  padding: 0.55rem 1.05rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .nav a {
@@ -735,6 +749,108 @@ img {
   letter-spacing: 0.02em;
 }
 
+.school-reviews-head {
+  margin-top: 0.5rem;
+}
+
+.mentor-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.review-links {
+  margin: 1.15rem 0 0;
+}
+
+.review-slider {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.review-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.review-track::-webkit-scrollbar {
+  display: none;
+}
+
+.review-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.review-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.review-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.review-arrow:hover:not(:disabled) {
+  background: var(--yellow-soft);
+  border-color: var(--yellow);
+}
+
+.review-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.review-card {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.review-card img {
+  width: 8.75rem;
+  height: 8.75rem;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+}
+
+.review-card h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.review-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .contacts-panel {
   margin-top: 0.5rem;
   padding: 1.6rem 1.5rem 1.5rem;
@@ -896,12 +1012,28 @@ img {
   .watch-grid {
     grid-template-columns: 1fr;
   }
+
+  .review-card {
+    flex-basis: 100%;
+  }
 }
 
 @media (max-width: 720px) {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+  }
+
+  .header-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
   }
 
   .video-grid {
@@ -938,6 +1070,10 @@ img {
 
   body {
     background-attachment: scroll;
+  }
+
+  .review-track {
+    scroll-behavior: auto;
   }
 
   .reveal,
