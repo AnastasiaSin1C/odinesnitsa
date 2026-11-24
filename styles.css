@@ -87,12 +87,6 @@ img {
   color: var(--muted);
 }
 
-.header-cta {
-  padding: 0.55rem 1.05rem;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-
 .nav a {
   position: relative;
   padding-bottom: 0.15rem;
